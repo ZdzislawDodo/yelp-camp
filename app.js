@@ -17,6 +17,7 @@ var indexRoutes = require("./routes/index.js"),
     commentRoutes = require("./routes/comments.js");
     
 mongoose.connect(process.env.DATABASEURL);
+mongoose.Promise = global.Promise;
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended: true}));
